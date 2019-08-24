@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="dropdown" id="dropdown">
+        <select class="btn btn-primary dropdown-toggle" id="branch">
+          <option value="Branch">BRANCH</option>
+          <option value="SSH">SSH</option>
+          <option value="COMPS">COMPS</option>
+          <option value="IT">IT</option>
+          <option value="EXTC">EXTC</option>
+          <option value="ETRX">ETRX</option>
+          <option value="MECH">MECH</option>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <select class="btn btn-primary dropdown-toggle" id="divYear">
+          <option value="">YEAR & DIVISION</option>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <select class="btn btn-primary dropdown-toggle" id="semester">
+          <option value="Semester">SEMESTER</option>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <select class="btn btn-primary dropdown-toggle" id="subject">
+          <option value="">SUBJECT</option>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <select class="btn btn-primary dropdown-toggle" id="slotType">
+          <option value="">SLOT TYPE</option>
+          <option value="Theory">THEORY</option>
+          <option value="Practical">PRACTICAL</option>
+          <option value="Tutorial">TUTORIAL</option>
+          <option value="Audit">AUDIT</option>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <select class="btn btn-primary dropdown-toggle" id="faculty">
+          <option value="">FACULTY</option>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <select class="btn btn-primary dropdown-toggle" id="room">
+          <option value="">ROOM NO.</option>
+          <option value="">B101</option>
+          <option value="">B102</option>
+          <option value="">B103</option>
+          <option value="">B104</option>
+          <option value="">B105</option>
+          <option value="">B106</option>
+          <option value="">B107</option>
+          <option value="">B109</option>
+          <option value="">B115</option>
+          <option value="">B116</option>
+          <option value="">B117</option>
+          <option value="">B201</option>
+          <option value="">B202</option>
+          <option value="">B203</option>
+          <option value="">B204</option>
+          <option value="">B205</option>
+          <option value="">B206</option>
+          <option value="">B207</option>
+          <option value="">B208</option>
+          <option value="">B209</option>
+          <option value="">B210A</option>
+          <option value="">B210B</option>
+          <option value="">B216</option>
+          <option value="">B217</option>
+          <option value="">B301</option>
+          <option value="">B302</option>
+          <option value="">B303</option>
+        </select>
+      </div>
+      <div class="dropdown">
+        <select class="btn btn-primary dropdown-toggle" id="batch">
+          <option value="">BATCH NO.</option>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <select class="btn btn-primary dropdown-toggle" id="tut">
+          <option value="">TUTORIAL HRS</option>
+          <option value="">1 HOUR</option>
+          <option value="">2 HOURS</option>
+        </select>
+      </div>
+    </div>
+    <div class="delete">
+      <div class="text">
+        <div
+          class="first-slot"
+          id="first-slot"
+          ondragover="allowDrop(event)"
+          ondrop="putFirstSlot(event)"
+        >
+          Enter first slot here to swap
+        </div>
+        <div
+          class="second-slot"
+          id="second-slot"
+          ondragover="allowDrop(event)"
+          ondrop="putSecondSlot(event)"
+        >
+          Enter second slot here to swap
+        </div>
+      </div>
+      <div
+        class="icon"
+        ondragover="allowDrop(event)"
+        ondrop="deleteSlot(event)"
+      >
+        <i class="far fa-trash-alt"></i>
+      </div>
+    </div>
+    <div class="heading">
+      <div class="class">
+        <h2 id="class">CLASS:</h2>
+      </div>
+      <div class="acad_year">
+        <h2 id="acad_year">ACADEMIC YEAR:</h2>
+      </div>
+      <div class="semesterType">
+        <h2 id="semesterType">SEMESTER:</h2>
+      </div>
+    </div>
+    <div id="myTable">
+      <table border="1" align="center" id="main_table">
+        <tr>
+          <td align="center">Time/Day</td>
+          <td align="center" id="mon">MONDAY</td>
+          <td align="center" id="tue">TUESDAY</td>
+          <td align="center" id="wed">WEDNESDAY</td>
+          <td align="center" id="thu">THURSDAY</td>
+          <td align="center" id="fri">FRIDAY</td>
+        </tr>
+        <tr id="one">
+          <td align="center">9:30-10:30</td>
+          <td
+            align="center"
+            id="mon-one"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="tue-one"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="wed-one"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="thu-one"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="fri-one"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+        </tr>
+
+        <tr id="two">
+          <td align="center">10:30-11:30</td>
+          <td
+            align="center"
+            id="mon-two"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="tue-two"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="wed-two"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="thu-two"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="fri-two"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+        </tr>
+        <tr id="three">
+          <td align="center">11:30-12:30</td>
+          <td
+            align="center"
+            id="mon-three"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="tue-three"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="wed-three"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="thu-three"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="fri-three"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+        </tr>
+        <tr id="lunch">
+          <td align="center">12:30-1:15</td>
+          <td colspan="5" align="center">LUNCH</td>
+        </tr>
+        <tr id="four">
+          <td align="center">1:15-2:15</td>
+          <td
+            align="center"
+            id="mon-four"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="tue-four"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="wed-four"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="thu-four"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="fri-four"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+        </tr>
+        <tr id="five">
+          <td align="center">2:15-3:15</td>
+          <td
+            align="center"
+            id="mon-five"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="tue-five"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="wed-five"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="thu-five"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="fri-five"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+        </tr>
+        <tr id="six">
+          <td align="center">3:15-4:15</td>
+          <td
+            align="center"
+            id="mon-six"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="tue-six"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="wed-six"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="thu-six"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="fri-six"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+        </tr>
+        <tr id="seven">
+          <td align="center">4:15-5:15</td>
+          <td
+            align="center"
+            id="mon-seven"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="tue-seven"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="wed-seven"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="thu-seven"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+          <td
+            align="center"
+            id="fri-seven"
+            draggable="true"
+            ondragstart="dragStart(event)"
+          ></td>
+        </tr>
+      </table>
+
+      <br />
+    </div>
+
+    <div class="overview">
+      <div id="stats"></div>
+      <div class="colors">
+        <div class="description-red">
+          <div class="box-red"></div>
+          <div class="red">Room Busy</div>
+        </div>
+        <div class="description-yellow">
+          <div class="box-yellow"></div>
+          <div class="yellow">Faculty Busy</div>
+        </div>
+        <div class="description-orange">
+          <div class="box-orange"></div>
+          <div class="orange">Both Room & Faculty Busy</div>
+        </div>
+      </div>
+    </div>
+    <script src="js/timetable.js"></script>
+  </body>
+</html>

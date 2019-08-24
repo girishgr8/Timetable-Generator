@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <style>
+      td {
+        min-width: 150px;
+      }
+      #container .dropdown {
+        display: inline-block;
+        align-items: center;
+      }
+      #batch {
+        display: none;
+      }
+      table {
+        font-weight: bold;
+      }
+      #table td,
+      #table th {
+        border: 1px solid black;
+      }
+      .heading {
+        display: inline-flex;
+        width: 100%;
+      }
+      .heading .nameDisplay {
+        float: left;
+        width: 45%;
+        font-weight: bold;
+      }
+      .heading .nameDisplay #nameDisplay {
+        font-weight: bold;
+        margin-left: 40%;
+      }
+      .heading .acad_year {
+        float: right;
+        width: 20%;
+        margin-right: 30px;
+      }
+      .heading .acad_year #acad_year {
+        float: right;
+        font-weight: bold;
+        margin-right: 5%;
+      }
+      .heading .semesterType #semesterType {
+        float: right;
+        font-weight: bold;
+      }
+      .report {
+        display: inline-flex;
+        width: 100%;
+      }
+      .report .theory-load {
+        float: left;
+        width: 30%;
+        margin-left: 15%;
+        font-weight: bold;
+      }
+      .report .theory-load #theory-load,
+      .report .practical-load #practical-load,
+      .report .total-load #total-load {
+        font-weight: bold;
+      }
+      .report .practical-load {
+        float: right;
+        width: 30%;
+        font-weight: bold;
+      }
+      .report .total-load {
+        float: right;
+        width: 35%;
+        font-weight: bold;
+      }
+      h2 {
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="container"
+      id="container"
+      style="text-align: center; margin-top: 10px"
+    >
+      <div class="dropdown" id="dropdown">
+        <select class="btn btn-primary dropdown-toggle" id="branch">
+          <option value="Branch">BRANCH</option>
+          <option value="SSH">SSH</option>
+          <option value="COMPS">COMPS</option>
+          <option value="IT">IT</option>
+          <option value="EXTC">EXTC</option>
+          <option value="ETRX">ETRX</option>
+          <option value="MECH">MECH</option>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <select class="btn btn-primary dropdown-toggle" id="faculty">
+          <option value="">FACULTY</option>
+        </select>
+      </div>
+    </div>
+    <div class="heading">
+      <div class="nameDisplay">
+        <h2 id="nameDisplay">FACULTY:</h2>
+      </div>
+      <div class="acad_year">
+        <h2 id="acad_year">ACADEMIC YEAR:</h2>
+      </div>
+      <div class="semesterType">
+        <h2 id="semesterType">SEMESTER:</h2>
+      </div>
+    </div>
+    <div class="report">
+      <div class="theory-load">
+        <h2 id="theory-load">THEORY LOAD:</h2>
+      </div>
+      <div class="practical-load">
+        <h2 id="practical-load">PRACTICAL LOAD:</h2>
+      </div>
+      <div class="total-load">
+        <h2 id="total-load">TOTAL LOAD:</h2>
+      </div>
+    </div>
+    <div id="myTable">
+      <table border="1" cellspacing="1" cellpadding="1" align="center" id="">
+        <tr>
+          <td align="center">Time/Day</td>
+          <td align="center" id="mon">MONDAY</td>
+          <td align="center" id="tue">TUESDAY</td>
+          <td align="center" id="wed">WEDNESDAY</td>
+          <td align="center" id="thu">THURSDAY</td>
+          <td align="center" id="fri">FRIDAY</td>
+        </tr>
+        <tr>
+          <td align="center">9:30-10:30</td>
+          <td align="center" id="mon-one"></td>
+          <td align="center" id="tue-one"></td>
+          <td align="center" id="wed-one"></td>
+          <td align="center" id="thu-one"></td>
+          <td align="center" id="fri-one"></td>
+        </tr>
+
+        <tr>
+          <td align="center">10:30-11:30</td>
+          <td align="center" id="mon-two"></td>
+          <td align="center" id="tue-two"></td>
+          <td align="center" id="wed-two"></td>
+          <td align="center" id="thu-two"></td>
+          <td align="center" id="fri-two"></td>
+        </tr>
+        <tr>
+          <td align="center">11:30-12:30</td>
+          <td align="center" id="mon-three"></td>
+          <td align="center" id="tue-three"></td>
+          <td align="center" id="wed-three"></td>
+          <td align="center" id="thu-three"></td>
+          <td align="center" id="fri-three"></td>
+        </tr>
+        <tr>
+          <td align="center">12:30-1:15</td>
+          <td colspan="5" align="center" id="lunch">LUNCH</td>
+        </tr>
+        <tr>
+          <td align="center">1:15-2:15</td>
+          <td align="center" id="mon-four"></td>
+          <td align="center" id="tue-four"></td>
+          <td align="center" id="wed-four"></td>
+          <td align="center" id="thu-four"></td>
+          <td align="center" id="fri-four"></td>
+        </tr>
+        <tr>
+          <td align="center">2:15-3:15</td>
+          <td align="center" id="mon-five"></td>
+          <td align="center" id="tue-five"></td>
+          <td align="center" id="wed-five"></td>
+          <td align="center" id="thu-five"></td>
+          <td align="center" id="fri-five"></td>
+        </tr>
+        <tr>
+          <td align="center">3:15-4:15</td>
+          <td align="center" id="mon-six"></td>
+          <td align="center" id="tue-six"></td>
+          <td align="center" id="wed-six"></td>
+          <td align="center" id="thu-six"></td>
+          <td align="center" id="fri-six"></td>
+        </tr>
+        <tr>
+          <td align="center">4:15-5:15</td>
+          <td align="center" id="mon-seven"></td>
+          <td align="center" id="tue-seven"></td>
+          <td align="center" id="wed-seven"></td>
+          <td align="center" id="thu-seven"></td>
+          <td align="center" id="fri-seven"></td>
+        </tr>
+      </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/facultyTT.js"></script>
+  </body>
+</html>

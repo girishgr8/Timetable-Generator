@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <form action="" method="POST">
+      <div class="imgcontainer">
+        <img src="avatar.jpg" alt="Avatar" class="avatar" />
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          id="email-field"
+          name="uname"
+          required
+          autocomplete="on"
+        />
+
+        <label for="psw"><b>Password</b></label>
+        <input
+          type="text"
+          placeholder="Enter Password"
+          name="psw"
+          id="password-field"
+          required
+          autocomplete="on"
+        />
+        <input type="checkbox" onclick="myFunction()" />Show Password
+
+        <button type="submit" onclick="validateUsername()">Login</button>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw"><a href="#">Forgot password</a></span>
+      </div>
+    </form>
+    <script src="index.js"></script>
+  </body>
+</html>

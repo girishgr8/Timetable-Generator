@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#subject_button').click(function() {
+          $('#action_center').html(
+            "<form id='addsubject'><fieldset><legend></legend>Subject ID&nbsp;<input type='text' placeholder='subjid'/><br/>Subject Name&nbsp;<input type='text' type='text' placeholder='subjname'/><br/>Department&nbsp;<input type='text' type='text' placeholder='dept'/><br/>Lecture&nbsp;<input type='text' type='text' placeholder='lec'/><br/>Lab&nbsp;<input type='text' type='text' placeholder='lab'/><br/>Tutorials&nbsp;<input type='text' type='text' placeholder='tuts'/><br/><input type='submit' value='Submit Subjects'/></fieldset></form>"
+          );
+          $('#action_center > form > fieldset > legend').text('Subject');
+        });
+        $('#faculty_button').click(function() {
+          $('#action_center').html(
+            "<form id='addfaculty'><fieldset><legend></legend>Faculty Code&nbsp;<input type='text' placeholder='facultycode'/><br/>Faculty Name&nbsp;<input type='text' type='text' placeholder='faculty name'/><br/>Department&nbsp;<input type='text' placeholder='dept'/><br/>Max Working Hours&nbsp;<input type='text' placeholder='maxhours'/></br><input type='submit' value='Submit Faculty'/></fieldset></form>"
+          );
+          $('#action_center > form  > fieldset > legend').text('Faculty');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="button_center">
+      <input type="button" id="subject_button" value="Add Subject" />
+      <input type="button" id="faculty_button" value="Add faculty" />
+    </div>
+    <div id="action_center"></div>
+  </body>
+</html>

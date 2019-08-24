@@ -1,0 +1,177 @@
+th {
+  text-align: center;
+}
+td {
+  max-width: 200px;
+  min-height: 50px;
+}
+table {
+  font-weight: bold;
+}
+#stats {
+  text-align: center;
+  align-content: center;
+}
+#container .dropdown {
+  display: inline-block;
+  align-items: center;
+}
+table {
+  height: 100%;
+  table-layout: fixed;
+}
+#batch,
+#tut {
+  display: none;
+}
+#table td {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+table table {
+  margin-top: -1px;
+  margin-bottom: -1px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.heading {
+  display: inline-flex;
+  width: 100%;
+}
+.heading .class {
+  float: left;
+  width: 45%;
+  font-weight: bold;
+}
+.heading .class #class {
+  font-weight: bold;
+  margin-left: 20%;
+}
+.heading .acad_year {
+  float: right;
+  width: 20%;
+  margin-left: 10%;
+  margin-right: 30px;
+}
+.heading .acad_year #acad_year {
+  float: right;
+  font-weight: bold;
+  margin-right: 5%;
+}
+.heading .semesterType #semesterType {
+  float: right;
+  font-weight: bold;
+}
+h2 {
+  font-size: 15px;
+}
+.overview {
+  width: 100%;
+  display: inline-flex;
+}
+
+.colors {
+  width: 20%;
+  float: right;
+  border: 2px solid black;
+  margin: auto;
+  align-self: auto;
+  text-align: right;
+}
+.colors .description-red {
+  display: inline-flex;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+.colors .description-red .box-red {
+  background: red;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  border: 2px solid black;
+}
+.colors .description-red .red {
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 25px;
+  margin-top: 5px;
+}
+.colors .description-yellow {
+  display: inline-flex;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+.colors .description-yellow .box-yellow {
+  background: yellow;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  border: 2px solid black;
+}
+.colors .description-yellow .yellow {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 25px;
+  margin-top: 5px;
+}
+.colors .description-orange {
+  display: inline-flex;
+  width: 100%;
+}
+.colors .description-orange .box-orange {
+  background: orange;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  border: 2px solid black;
+}
+.colors .description-orange .orange {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 18px;
+  margin-top: 5px;
+}
+
+.delete {
+  margin-top: 5px;
+  width: 100%;
+  height: 10%;
+  display: inline-flex;
+}
+
+.delete .text {
+  width: 70%;
+  float: left;
+  display: inline-flex;
+  align-content: center;
+  text-align: center;
+}
+
+.delete .text .first-slot,
+.delete .text .second-slot {
+  width: 50%;
+  float: left;
+  margin: 0% 2%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  padding-top: 10px;
+  border: 1px solid dodgerblue;
+}
+
+.delete .icon {
+  width: 30%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: 1px solid dodgerblue;
+}
+
+.delete .icon i {
+  font-size: 25px;
+  float: right;
+  padding-right: 150px;
+}
