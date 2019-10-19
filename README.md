@@ -11,6 +11,8 @@
 
 ## Demo
 
+1. **_Slot Swapping_**
+
 ![Slot Swap Demo](https://github.com/girishgr8/Timetable-Generator/blob/master/Demos/swap_slot.gif)
 
 ## Improvements
