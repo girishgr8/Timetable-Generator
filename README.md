@@ -1,5 +1,5 @@
 # Timetable-Generator 
-![](https://lh3.googleusercontent.com/mgl-KJ9Ao-NwuvNhbWMRFRwpeGh7ApL26MpsVQ2dCqWF2NH2DyDuanX1uyyUYYG6RMfhdQ)
+![](https://img.shields.io/badge/Made_with-HTML-orange?style=for-the-badge&logo=HTML5)  ![](https://img.shields.io/badge/Made_with-CSS-blue?style=for-the-badge&logo=CSS3)  ![](https://img.shields.io/badge/Made_with-Javascript-yellow?style=for-the-badge&logo=javascript)
 
 **GUI based (web based) application to facilitate generation of college timetable with less efforts**
 
@@ -18,3 +18,4 @@
 ## Improvements
 
 1. Allot optional faculty for the Pratical Lab Session
+ 
